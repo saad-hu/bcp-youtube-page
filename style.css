@@ -205,11 +205,12 @@ main {
     width: calc(100vw - var(--sidebar-width));
     overflow-x: scroll;
     white-space: nowrap;
-    padding: 10px 20px;
+    padding: 10px 20px 0px 20px;
     background-color: white;
     position: sticky;
     top: var(--navbar-height);
     z-index: 1;
+    height: 65px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -224,6 +225,29 @@ main {
     scrollbar-width: none;
     /* Firefox */
 }
+
+.tags:hover::-webkit-scrollbar {
+    display: block;
+    height: 10px;
+}
+
+/* Track */
+.tags:hover::-webkit-scrollbar-track {
+    box-shadow: 0 0 5px rgb(186, 186, 186) inset ;
+    border-radius: 10px;
+}
+
+/* Handle */
+.tags:hover::-webkit-scrollbar-thumb {
+    background: rgb(132, 132, 132);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.tags:hover::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
 
 button.tag {
     font-family: Roboto-Light;
@@ -258,13 +282,13 @@ button.tag.active {
 .all-videos a {
     color: black;
     text-decoration: none;
-    transition: all 0.5s 1s;
+    transition: all 0.5s;
 }
 
 .all-videos a:hover {
     transform: scale(1.2);
     background-color: white;
-    z-index: 2;
+    z-index: 1;
 }
 
 .all-videos .video-container {
